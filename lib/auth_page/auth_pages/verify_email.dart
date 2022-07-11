@@ -4,6 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../global_utils/utils.dart';
+import '../../main_page.dart';
 
 class VerifyEmailPage extends StatefulWidget {
   bool darkM;
@@ -76,14 +77,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
   @override
   Widget build(BuildContext context) {
     return isEmailVerified
-        ? Center(
-            child: ElevatedButton(
-            child: Text("Log out!"),
-            onPressed: () {
-              FirebaseAuth.instance.signOut();
-            },
-          ))
-        // ? MainPage(darkM, callback)
+        ? MainPage(darkM, callback)
         : Scaffold(
             appBar: AppBar(
               title: const Text("Verify Email"),
