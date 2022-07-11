@@ -46,16 +46,19 @@ class _MyInputState extends State<MyInput> {
   Future<void> getContacts() async {
     var status = await Permission.contacts.status;
     if (status.isDenied) {
-      await Permission.contacts.request().isGranted;
+      await Permission.contacts.request();
     }
-    final Iterable<Contact> contacts = await FastContacts.allContacts;
+    status = await Permission.contacts.status;
+    if (status.isGranted) {
+      final Iterable<Contact> contacts = await FastContacts.allContacts;
 
-    //We already have permissions for contact when we get to this page, so we
-    // are now just retrieving it
-    setState(() {
-      _contacts = contacts;
-    });
-    print("Loaded contacts");
+      //We already have permissions for contact when we get to this page, so we
+      // are now just retrieving it
+      setState(() {
+        _contacts = contacts;
+      });
+      print("Loaded contacts");
+    }
   }
 
   TextEditingController getController() {
