@@ -2,7 +2,8 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../../global_utils/utils.dart';
+import '../../../global_utils/utils.dart';
+import 'forgot_password_page.dart';
 
 class LoginWidget extends StatefulWidget {
   final VoidCallback onClickedSignUp;
@@ -124,11 +125,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                     fontSize: 20),
               ),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => const Center(
-                        child: Text("Forgot Password Page"),
-                      )
-                  // const ForgotPasswordPage(),
-                  )),
+                //go to forgot password page
+                builder: (context) => const ForgotPasswordPage(),
+              )),
             ),
             const SizedBox(
               height: 16,
