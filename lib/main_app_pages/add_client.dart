@@ -8,6 +8,7 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:intl/intl.dart';
 
 import '../global_utils/input.dart';
+import '../global_utils/weekButtons.dart';
 
 class AddUser extends StatefulWidget {
   const AddUser({Key? key}) : super(key: key);
@@ -65,7 +66,7 @@ class _AddUserState extends State<AddUser> {
                           ],
                         ),
                       ),
-                      // week = WeekButton(),
+                      week = WeekButton(),
                     ],
                   ),
                   SizedBox(height: 20),
