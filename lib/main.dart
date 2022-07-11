@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'auth_page/auth_controller.dart';
+import 'global_utils/utils.dart';
 import 'plugins/firebase_options.dart';
 
 Future main() async {
@@ -14,9 +15,6 @@ Future main() async {
 
   runApp(const MainApp());
 }
-
-final navigatorKey = GlobalKey<NavigatorState>();
-final messengerKey = GlobalKey<ScaffoldMessengerState>();
 
 class MainApp extends StatefulWidget {
   const MainApp({Key? key}) : super(key: key);

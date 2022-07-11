@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
-import '../../main.dart';
+import '../../global_utils/utils.dart';
 
 class LoginWidget extends StatefulWidget {
   final VoidCallback onClickedSignUp;
@@ -167,9 +167,8 @@ class _LoginWidgetState extends State<LoginWidget> {
           password: passwordController.text.trim(),
         );
       } on FirebaseAuthException catch (e) {
-        // print(e);
-
-        // Utils.showSnackBar(e.message);
+        //show snackbar if there is an error
+        Utils.showSnackBar(e.message);
       }
 
       navigatorKey.currentState!.popUntil((route) => route.isFirst);
