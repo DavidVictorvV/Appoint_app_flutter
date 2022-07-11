@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 import 'package:firebase_core/firebase_core.dart';
 
+import 'auth_page/auth_controller.dart';
 import 'plugins/firebase_options.dart';
 
 Future main() async {
@@ -77,9 +78,8 @@ class _MainAppState extends State<MainApp> {
                   // return VerifyEmailPage(darkM, callback);
                   return Center(child: Text("Verify page"));
                 } else {
-                  //show authentification page
-                  return Center(child: Text("Auth page"));
-                  // return AuthPage();
+                  //go to authentification controller
+                  return AuthPage();
                 }
               })),
     );
