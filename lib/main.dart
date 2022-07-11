@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 
 import 'auth_page/auth_controller.dart';
+import 'auth_page/auth_pages/verify_email.dart';
 import 'global_utils/utils.dart';
 import 'plugins/firebase_options.dart';
 
@@ -73,8 +74,7 @@ class _MainAppState extends State<MainApp> {
                   );
                 } else if (snapshot.hasData) {
                   //if firebase auth loaded and logged in show verify page
-                  // return VerifyEmailPage(darkM, callback);
-                  return Center(child: Text("Verify page"));
+                  return VerifyEmailPage(darkM, callback);
                 } else {
                   //go to authentification controller
                   return AuthPage();
