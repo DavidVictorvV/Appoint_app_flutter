@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
-import 'global_utils/get_curent_username.dart';
+import '../global_utils/get_curent_username.dart';
 
 class MainPage extends StatefulWidget {
   bool darkM;
