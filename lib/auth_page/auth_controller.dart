@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'auth_pages/login/logIn_page.dart';
+import 'auth_pages/signUp_page.dart';
 
 class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
@@ -15,8 +16,7 @@ class _AuthPageState extends State<AuthPage> {
   Widget build(BuildContext context) {
     return isLogin
         ? LoginWidget(onClickedSignUp: toggle)
-        : Center(child: Text("SignUp"));
-    // : SignUpWidget(onClickedSignUp: toggle);
+        : SignUpWidget(onClickedSignUp: toggle);
   }
 
   void toggle() => setState(() {
