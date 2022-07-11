@@ -54,11 +54,13 @@ class _LoginWidgetState extends State<LoginWidget> {
             const SizedBox(
               height: 40,
             ),
+            //input for email
             TextFormField(
               controller: emailController,
               validator: (value) {
                 if (value == null ||
                     value.isEmpty ||
+                    //check if email is correct type
                     !RegExp(r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
                         .hasMatch(value)) {
                   return 'Please enter a valid mail!';
@@ -73,6 +75,7 @@ class _LoginWidgetState extends State<LoginWidget> {
               height: 4,
             ),
             TextFormField(
+              //input for password
               controller: passwordController,
               validator: (value) {
                 if (value == null || value.isEmpty) {
@@ -87,10 +90,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                   suffixIcon: IconButton(
                       onPressed: () {
                         setState(() {
+                          //show/hide password
                           hidePassword = !hidePassword;
                         });
-
-                        print(hidePassword);
                       },
                       icon: Icon(hidePassword
                           ? Icons.visibility_off
@@ -122,7 +124,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                     fontSize: 20),
               ),
               onTap: () => Navigator.of(context).push(MaterialPageRoute(
-                  builder: (context) => Center(
+                  builder: (context) => const Center(
                         child: Text("Forgot Password Page"),
                       )
                   // const ForgotPasswordPage(),
