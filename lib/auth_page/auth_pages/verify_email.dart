@@ -4,7 +4,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 
 import '../../global_utils/utils.dart';
-import '../../main_page_controller.dart';
+import '../../main_app_pages/main_page_controller.dart';
 
 class VerifyEmailPage extends StatefulWidget {
   bool darkM;
