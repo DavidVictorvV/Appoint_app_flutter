@@ -7,6 +7,8 @@ import 'package:fast_contacts/fast_contacts.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:intl/intl.dart';
 
+import '../global_utils/input.dart';
+
 class AddUser extends StatefulWidget {
   const AddUser({Key? key}) : super(key: key);
 
@@ -37,17 +39,17 @@ class _AddUserState extends State<AddUser> {
                   const SizedBox(
                     height: 80,
                   ),
-                  // name = MyInput("Name", "David", Icons.person, myControllerName,
-                  // myControllerPhone),
-                  // phone = MyInput(
-                  //   "Phone",
-                  //   "07...",
-                  //   Icons.phone_iphone,
-                  //   myControllerPhone,
-                  //   myControllerName,
-                  //   nr: true,
-                  //   last: true,
-                  // ),
+                  name = MyInput("Name", "David", Icons.person,
+                      myControllerName, myControllerPhone),
+                  phone = MyInput(
+                    "Phone",
+                    "07...",
+                    Icons.phone_iphone,
+                    myControllerPhone,
+                    myControllerName,
+                    nr: true,
+                    last: true,
+                  ),
                   Column(
                     children: [
                       Padding(
